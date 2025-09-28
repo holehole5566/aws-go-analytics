@@ -24,7 +24,7 @@ type Settings struct {
 
 func LoadSettings() (*Settings, error) {
 	// Load .env file if it exists
-	_ = godotenv.Load()
+	_ = godotenv.Load(".env", "../.env", "../../.env")
 
 	settings := &Settings{
 		OpenSearchEndpoint:    os.Getenv("OPENSEARCH_ENDPOINT"),
